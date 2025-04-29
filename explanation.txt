@@ -1,0 +1,9 @@
+How the program works:
+
+first it takes the argument in the terminal as a string for opening a file. It opens the bankerInfo.txt file, which is then read by 6 integers per process. The integers read represent:
+- [0-2]: allocated
+- [3-5]: max
+
+the other 3 numbers are the current amount.
+
+It then gets the needed amount per each process using the getNeed() function. Once the needs are found, a vector containing the safe states of all the processes is initialized, which determines in the safe state loop to see if they are already safe or not. The loop checks each process to see if they are (1) already safe, and (2) if they are safe with the new available amount via isSafe(), which returns either true or false. If true, the process number is added to the safe sequence. It goes through this loop as many times needed, and looks to see if all the states are safe after it finishes. If they are, it will output that the system is safe the order of the safe state sequence. If not, then the system is not in a safe sequence. 
